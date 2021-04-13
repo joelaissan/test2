@@ -1,0 +1,68 @@
+<style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>
+<script>
+  function randomString() {
+        var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var result = '';
+        for (var i = 10; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+        return result;
+  }
+
+</script>
+
+<form class="form-signin" method="get" action="https://paygateglobal.com/v1/page">
+  <h1 class="h3 mb-3 font-weight-normal">Informations pour le paiement</h1>
+  <input type="hidden" id="phone" class="form-control" placeholder="token" value="Joel transaction" name="description" required autofocus>
+  <input type="hidden" id="phone" class="form-control" placeholder="token" value="randomString()" name="identifier" required autofocus>
+  <input type="hidden" id="phone" class="form-control" placeholder="token" value="22ac309e-bd06-466d-a46b-caf580cdcbe8" name="token" required autofocus>
+  <label for="inputEmail" class="sr-only"></label>
+  <input type="text" id="phone" class="form-control" placeholder="Numero de téléphone" name="phone" required autofocus>
+  <label for="inputEmail" class="sr-only"></label>
+  <input type="text" id="amount" class="form-control" placeholder="Montant de la transaction" name="amount" required autofocus>
+  <label for="inputEmail" class="sr-only"></label>
+    <div class="checkbox mb-3"></div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Payer</button>
+</form>

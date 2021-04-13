@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post 'login', to:'pages#connectUser'
   get 'modify', to:'pages#modify'
   post 'modify', to:'pages#changer'
-
+  get 'buy', to:'pages#payer'
 end

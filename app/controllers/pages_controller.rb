@@ -1,8 +1,19 @@
 class PagesController < ApplicationController
-    
+
     def accueil
         @id = params[:id]
         @user = User.find_by(id: @id)
+    end
+
+    def create
+  # ...
+  session[:current_user_id] = @user.id
+  # ...
+end
+
+
+    def payer
+        
     end
 
     def home
@@ -26,7 +37,7 @@ class PagesController < ApplicationController
         @link = '/dashboard/'+ @user.id.to_s
         redirect_to @link
     end
-        
+
     def createUser
         @user = User.new
         @user.nom = params[:nom]
