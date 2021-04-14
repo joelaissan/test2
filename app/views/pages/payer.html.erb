@@ -1,3 +1,8 @@
+<html>
+<head>
+</head>
+<body>
+
 <style>
 html,
 body {
@@ -44,19 +49,23 @@ body {
 }
 </style>
 <script>
-  function randomString() {
-        var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        var result = '';
-        for (var i = 10; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-        return result;
-  }
 
+  function randomString() {
+  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var result = '';
+  for (var i = 10; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+  
+  document.getElementById('value_run').innerHTML = result;
+  document.getElementById('phone_id').value = result;
+  return result;
+  }
 </script>
 
-<form class="form-signin" method="get" action="https://paygateglobal.com/v1/page">
+<form class="form-signin" method="get" action="https://paygateglobal.com/v1/page" >
   <h1 class="h3 mb-3 font-weight-normal">Informations pour le paiement</h1>
   <input type="hidden" id="phone" class="form-control" placeholder="token" value="Joel transaction" name="description" required autofocus>
-  <input type="hidden" id="phone" class="form-control" placeholder="token" value="randomString()" name="identifier" required autofocus>
+  <input type="hidden" id="phone_id" class="form-control" placeholder="token" value="value_run" name="identifier" required autofocus>
+  <h1 id='value_run'>____________________</h1>
   <input type="hidden" id="phone" class="form-control" placeholder="token" value="22ac309e-bd06-466d-a46b-caf580cdcbe8" name="token" required autofocus>
   <label for="inputEmail" class="sr-only"></label>
   <input type="text" id="phone" class="form-control" placeholder="Numero de téléphone" name="phone" required autofocus>
@@ -64,5 +73,10 @@ body {
   <input type="text" id="amount" class="form-control" placeholder="Montant de la transaction" name="amount" required autofocus>
   <label for="inputEmail" class="sr-only"></label>
     <div class="checkbox mb-3"></div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Payer</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Faire le paiement</button>
+  
+  <script> randomString(); </script>
 </form>
+
+</body>
+</html>
